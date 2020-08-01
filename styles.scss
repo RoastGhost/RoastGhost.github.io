@@ -1,93 +1,97 @@
 /* Base structure */
- body {
-    display: -ms-flexbox;
-    height: 4em;
-  }
-  
-  .cover-container {
-    max-width: 60em;
-  }
+body {
+  display: -ms-flexbox;
+  height: 4em;
+}
+
+.cover-container {
+  max-width: 60em;
+}
 /* Pricing Formatting */
 .pricing-header {
-  max-width: 700px;
+max-width: 700px;
 }
 
 .card-deck .card {
-  min-width: 220px;
+min-width: 220px;
 }
 
 
-  /* about social icon responsiveness */
-  .nopadding {
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex;
-    align-items: center;
- }
+/* about social icon responsiveness */
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+}
 
- .norightpadding {
-   padding: 1rem 0px 1rem 1rem;
- }
+.norightpadding {
+ padding: 1rem 0px 1rem 1rem;
+}
+
+.addbottompadding {
+ padding: 0 0 1rem 0;
+}
 
 /* Contact Style*/
-  .contact__img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-  }
+.contact__img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 
-  .emphasis {
-    font-weight: bold;
+.emphasis {
+  font-weight: bold;
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 960px;
-  }
-  .nav-masthead {
-    float: right;
-  }
+.container {
+  max-width: 960px;
+}
+.nav-masthead {
+  float: right;
+}
 }
 
 @media (min-width: 720px) {
-  .container {
-    max-width: 960px;
-  }
-  
+.container {
+  max-width: 960px;
+}
+
 }
 
 @media (min-width: 545px) {
-  .container {
-    max-width: 960px;
-  }
+.container {
+  max-width: 960px;
+}
 }
 
 @media (min-width: 768px) {
-  .col-sm {
-    -ms-flex-preferred-size: 0;
-    flex-basis: 0;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    min-width: 0;
-    max-width: 100%;
-  }
+.col-sm {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+}
 }
 
 @media (min-width: 575px) {
-  .col-sm {
-    flex-basis: 384px;
-  }
+.col-sm {
+  flex-basis: 384px;
+}
 }
 
 @media (min-width: 0px) {
-  .contact__img{
-    margin-top: 25px;
-  }
+.contact__img{
+  margin-top: 25px;
+}
 }
 
 @media (min-width: 768px) {
-  .contact__img{
-    margin-top: 0px;
-  }
+.contact__img{
+  margin-top: 0px;
+}
 }
 
 /* Social Icons */
@@ -100,119 +104,162 @@ $flickr-blue: #256DD9;
 $amazon-yellow: #fd9a00;
 $amazon-black: #231f20;
 $socials: (
-  github:      $gun,
-  instagram:   $gun,
-  linkedin:    $gun,
+github:      $gun,
+instagram:   $gun,
+linkedin:    $gun,
 );
 $badges: (
-  app-store:   2700,
-  google-play: 2700
+app-store:   2700,
+google-play: 2700
 );
 .social {
-  a {
-    margin    : $max-size*.1;
-    transition: 0.5s ease;
-    height    : $size;
-    width     : $size;
-    max-width : $max-size;
-    max-height: $max-size;
-    display   : inline-block;
-    &:hover {
-      cursor: pointer;
-    }
-    svg {
-      height: 100%;
-      width : 100%;
-      fill  : white;
-    }
+a {
+  margin    : $max-size*.1;
+  transition: 0.5s ease;
+  height    : $size;
+  width     : $size;
+  max-width : $max-size;
+  max-height: $max-size;
+  display   : inline-block;
+  &:hover {
+    cursor: pointer;
   }
-  .badges a {
-    border-radius: 1rem;
+  svg {
+    height: 100%;
+    width : 100%;
+    fill  : white;
   }
+}
+.badges a {
+  border-radius: 1rem;
+}
 }
 .round {
-  border-radius: 50%;
+border-radius: 50%;
 }
 .rounded {
-  border-radius: 20%;
+border-radius: 20%;
 }
 // ICON COLORS
 @each $social, $color in $socials {
+@if $social == 'generic' {
+  .generic {
+    background: $color;
+    &:focus,
+    &:hover {
+      background: darken($color,$darken);
+    }
+  }
+}
+@else {
+  .#{$social} {
+    background: $color;
+    &:focus,
+    &:hover {
+      background: darken($color,$darken);
+    }
+    @if $social == 'snapchat' {
+      svg {
+        stroke-width: 13;
+        stroke      : darken($gun,8%);
+      }
+    }
+    @if $social == 'flickr' {
+      .flickr-blue {
+        fill: $flickr-blue;
+      }
+      .flickr-pink {
+        fill: $flickr-pink;
+      }
+    }
+    @if $social == 'amazon' {
+      .amz-arrow {
+        fill: $amazon-yellow;
+      }
+      .amz-a {
+        fill: $amazon-black
+      }
+    }
+    @if $social == 'reddit' {
+      svg {
+        stroke-width: 18;
+        stroke      : $gun;
+        &.alt {
+          stroke-width: 21;
+        }
+        &:focus,
+        &:hover {
+          svg {
+            stroke: darken($gun,$darken);
+          }
+        }
+        .reddit-eyes {
+          fill        : #f04a22;
+          stroke-width: 0;
+        }
+        .reddit-line {
+          stroke-linecap : round;
+          fill           : none;
+          stroke-linejoin: round;
+        }
+      }
+    }
+  }
+}
+}
+
+// NO BG
+.no-bg {
+a {
+  background-color: transparent !important;
+  margin          : 0;
+}
+@each $social, $color in $socials {
   @if $social == 'generic' {
     .generic {
-      background: $color;
+      svg {
+        fill: $color;
+      }
       &:focus,
       &:hover {
-        background: darken($color,$darken);
+        svg {
+          fill: darken($color,$darken);
+        }
       }
     }
   }
   @else {
     .#{$social} {
-      background: $color;
-      &:focus,
-      &:hover {
-        background: darken($color,$darken);
-      }
       @if $social == 'snapchat' {
         svg {
-          stroke-width: 13;
-          stroke      : darken($gun,8%);
+          fill  : $gun;
+          stroke: $gun;
+        }
+        &:focus,
+        &:hover {
+          svg {
+            fill  : darken($gun,$darken);
+            stroke: darken($gun,$darken);
+          }
         }
       }
-      @if $social == 'flickr' {
-        .flickr-blue {
-          fill: $flickr-blue;
-        }
-        .flickr-pink {
-          fill: $flickr-pink;
-        }
-      }
-      @if $social == 'amazon' {
-        .amz-arrow {
-          fill: $amazon-yellow;
-        }
-        .amz-a {
-          fill: $amazon-black
-        }
-      }
-      @if $social == 'reddit' {
+      @elseif $social == 'reddit' {
         svg {
-          stroke-width: 18;
-          stroke      : $gun;
-          &.alt {
-            stroke-width: 21;
+          fill: white !important;
+        }
+      }
+      @elseif $social == 'flickr' {
+        &:focus,
+        &:hover {
+          .flickr-blue {
+            fill: darken($flickr-blue,$darken);
           }
-          &:focus,
-          &:hover {
-            svg {
-              stroke: darken($gun,$darken);
-            }
-          }
-          .reddit-eyes {
-            fill        : #f04a22;
-            stroke-width: 0;
-          }
-          .reddit-line {
-            stroke-linecap : round;
-            fill           : none;
-            stroke-linejoin: round;
+          .flickr-pink {
+            fill: darken($flickr-pink,$darken);
           }
         }
       }
-    }
-  }
-}
-
-// NO BG
-.no-bg {
-  a {
-    background-color: transparent !important;
-    margin          : 0;
-  }
-  @each $social, $color in $socials {
-    @if $social == 'generic' {
-      .generic {
+      @else {
         svg {
           fill: $color;
         }
@@ -224,241 +271,198 @@ $badges: (
         }
       }
     }
-    @else {
-      .#{$social} {
-        @if $social == 'snapchat' {
-          svg {
-            fill  : $gun;
-            stroke: $gun;
-          }
-          &:focus,
-          &:hover {
-            svg {
-              fill  : darken($gun,$darken);
-              stroke: darken($gun,$darken);
-            }
-          }
-        }
-        @elseif $social == 'reddit' {
-          svg {
-            fill: white !important;
-          }
-        }
-        @elseif $social == 'flickr' {
-          &:focus,
-          &:hover {
-            .flickr-blue {
-              fill: darken($flickr-blue,$darken);
-            }
-            .flickr-pink {
-              fill: darken($flickr-pink,$darken);
-            }
-          }
-        }
-        @else {
-          svg {
-            fill: $color;
-          }
-          &:focus,
-          &:hover {
-            svg {
-              fill: darken($color,$darken);
-            }
-          }
-        }
-      }
-    }
   }
+}
 }
 
 // BADGES
 .social {
-  @each $badge, $width in $badges {
-    .#{$badge} {
-      width: $size * $width / 800;
-      max-width : $max-size * $width / 800;
+@each $badge, $width in $badges {
+  .#{$badge} {
+    width: $size * $width / 800;
+    max-width : $max-size * $width / 800;
+  }
+}
+}
+
+/* Anchor Links CSS */
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+a:active {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+/* Header */
+.masthead {
+  margin-bottom: 2rem; 
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 300;
+  color: rgba(150, 150, 150, 1);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: black;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+/* Carousel Below */
+$large: 1200px;
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  height: 93vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 10px;
+  padding: 1rem 0 0 0;
+  margin-bottom: -80vw;
+
+  @media screen and (min-width: $large) {
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto;
+    padding: 0rem 0;
+  }
+}
+@media (min-width: 0px) {
+  .wrapper{
+    margin-bottom: -32vh;
+  }
+}
+@media (min-width: 576px) {
+  .wrapper{
+    margin-bottom: -32vh;
+  }
+}
+@media (min-width: 768px) {
+  .wrapper{
+    margin-bottom: -32vh;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper{
+    margin-bottom: -32vh;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper{
+    margin-bottom: -1vh;
+  }
+}
+
+
+
+
+
+.gallery {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  display: flex;
+
+ 
+}
+
+.gallery__img {
+  scroll-snap-align: start;
+  margin-bottom: 0px;
+  min-width: 100vw;
+  object-fit: cover;
+
+  @media screen and (min-width: $large) {
+    min-width: auto;
+    min-height: auto;
+  }
+}
+
+.lil-nav {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: none;
+  grid-row-start: 2;
+
+  @media screen and (min-width: $large) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
+    grid-row-start: auto;
+  }
+
+  a {
+    display: flex;
+    min-width: 45vw;
+    margin-right: 10px;
+
+    @media screen and (min-width: $large) {
+      margin-bottom: 0px;
+      min-height: 200px;
+      min-width: 100%;
     }
   }
 }
 
-/* Anchor Links CSS */
-  a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
+.lil-nav__img {
+  object-fit: cover;
+  filter: saturate(0);
+  transition: 0.3s ease all;
 
-  a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:visited {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  a:hover {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+  &:hover {
     transform: scale(1.05);
+    filter: saturate(1);
   }
-  a:active {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  
-/* Header */
-  .masthead {
-    margin-bottom: 2rem; 
-  }
-  
-  .masthead-brand {
-    margin-bottom: 0;
-  }
-  
-  .nav-masthead .nav-link {
-    padding: .25rem 0;
-    font-weight: 300;
-    color: rgba(150, 150, 150, 1);
-    background-color: transparent;
-    border-bottom: .25rem solid transparent;
-  }
-  
-  .nav-masthead .nav-link:hover,
-  .nav-masthead .nav-link:focus {
-    border-bottom-color: rgba(255, 255, 255, .25);
-  }
-  
-  .nav-masthead .nav-link + .nav-link {
-    margin-left: 1rem;
-  }
-  
-  .nav-masthead .active {
-    color: black;
-    border-bottom-color: #fff;
-  }
-  
-  @media (min-width: 48em) {
-    .masthead-brand {
-      float: left;
-    }
-    .nav-masthead {
-      float: right;
-    }
-  }
-  
-/* Carousel Below */
-  $large: 1200px;
-  
-  img {
-    display: block;
-    max-width: 100%;
-  }
-  
-  .wrapper {
-    overflow: hidden;
-    height: 93vh;
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    grid-gap: 10px;
-    padding: 1rem 0 0 0;
-    margin-bottom: -80vw;
-  
-    @media screen and (min-width: $large) {
-      grid-template-columns: 1fr 5fr;
-      grid-template-rows: auto;
-      padding: 0rem 0;
-    }
-  }
-  @media (min-width: 0px) {
-    .wrapper{
-      margin-bottom: -32vh;
-    }
-  }
-  @media (min-width: 576px) {
-    .wrapper{
-      margin-bottom: -32vh;
-    }
-  }
-  @media (min-width: 768px) {
-    .wrapper{
-      margin-bottom: -32vh;
-    }
-  }
-  @media (min-width: 992px) {
-    .wrapper{
-      margin-bottom: -32vh;
-    }
-  }
-  @media (min-width: 1200px) {
-    .wrapper{
-      margin-bottom: -1vh;
-    }
-  }
-
- 
-
-  
-  
-  .gallery {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    display: flex;
-  
-   
-  }
-  
-  .gallery__img {
-    scroll-snap-align: start;
-    margin-bottom: 0px;
-    min-width: 100vw;
-    object-fit: cover;
-  
-    @media screen and (min-width: $large) {
-      min-width: auto;
-      min-height: auto;
-    }
-  }
-  
-  .lil-nav {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: none;
-    grid-row-start: 2;
-  
-    @media screen and (min-width: $large) {
-      overflow-y: scroll;
-      overflow-x: hidden;
-      display: block;
-      grid-row-start: auto;
-    }
-  
-    a {
-      display: flex;
-      min-width: 45vw;
-      margin-right: 10px;
-  
-      @media screen and (min-width: $large) {
-        margin-bottom: 0px;
-        min-height: 200px;
-        min-width: 100%;
-      }
-    }
-  }
-  
-  .lil-nav__img {
-    object-fit: cover;
-    filter: saturate(0);
-    transition: 0.3s ease all;
-  
-    &:hover {
-      transform: scale(1.05);
-      filter: saturate(1);
-    }
-  }
+}
