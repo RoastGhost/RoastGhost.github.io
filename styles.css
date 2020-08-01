@@ -33,6 +33,10 @@ body {
   padding: 1rem 0px 1rem 1rem;
 }
 
+.addbottompadding {
+  padding: 0 0 1rem 0;
+}
+
 /* Contact Style*/
 .contact__img {
   -webkit-filter: grayscale(100%);
