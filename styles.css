@@ -414,17 +414,26 @@ header {
 /* FOOTER */
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 55px 80px 0 80px;
-  }
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 55px 80px 0 80px;
+}
 
 .secondary-navigation {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.secondary-navigation p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
 }
 
 .footer-logo-anchor img {
