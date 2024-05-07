@@ -470,6 +470,129 @@ header {
   fill: rgb(55, 201, 113);
 }
 
+/* CONTACT US OVERALL CONTAINER*/
+.div5 {
+  display: flex;
+  flex-direction: column;
+  width: 1081px;
+  height: 1455px;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.div5 h5 {
+  width: 554px;
+  height: 60px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 60px */
+  text-transform: capitalize;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-box {
+  /* display: flex;
+  flex-direction: column; */
+  width: 1067px;
+  /* height: 1217px; */
+  flex-shrink: 0;
+  border-radius: 42px;
+  border: 10px solid #3737c9;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.contact-headings {
+  width: 653.141px;
+  height: 50px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 72px */
+  text-transform: capitalize;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.contact-information {
+  /* display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between; */
+  display: flex;
+  padding: 0px 34px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-information p {
+  display: flex;
+  width: 313px;
+  height: 49px;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 36px */
+  text-transform: lowercase;
+}
+
+.contact-information svg {
+  align-self: center;
+}
+
+.contact-information-l {
+  display: flex;
+  padding: 15px 0px 20.942px 45.101px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 57.5px;
+}
+
+.contact-information-r {
+  display: flex;
+  padding: 12px 0px 18px 45.101px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 66.722px;
+}
+
+.contact-form {
+  width: 1067px;
+  height: 970px;
+  flex-shrink: 0;
+  border-radius: 0px 0px 32px 32px;
+  background: #0e0e19;
+  /* position: absolute; */
+  bottom: 0;
+  
+}
+
+/* END OF CONTACT FORM*/
+
 .div6 {
   width: 1080px;
   height: 442px;
@@ -541,7 +664,7 @@ footer {
     overflow-x: hidden;
   }
   body {
-    width:100%;
+    width: 100%;
     position: relative;
   }
 
@@ -718,8 +841,7 @@ footer {
     margin-bottom: 30px;
   }
   /*  THIS IS WHERE VEND SELECTOR WILL BE MODIFIED 
-    set to display none for now!
-*/
+    set to display none for now!*/
   .box-border {
     display: none;
   }
