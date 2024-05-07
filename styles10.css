@@ -1164,6 +1164,11 @@ footer {
     margin-bottom: 42;
   }
 
+  /* HIDE CONTACT FORM FOR NOW */
+  .div6 {
+    display: none;
+  }
+
   /*  FOOTER BEGINS */
   footer {
     display: flex;
