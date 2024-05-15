@@ -669,7 +669,7 @@ textarea {
   box-sizing: border-box;
   resize: none;
 }
-//TRY TEXT AREA IN A DIV TO MOVE SCROLL BAR MORE INSIDE!
+/* TRY TEXT AREA IN A DIV TO MOVE SCROLL BAR MORE INSIDE! */
 
 input[type="number"],
 select {
